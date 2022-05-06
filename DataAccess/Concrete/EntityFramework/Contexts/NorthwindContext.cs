@@ -13,7 +13,7 @@ namespace DataAccess.Concrete.EntityFramework.Contexts
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Data Source=DESKTOP-4HHFM4J\DEVELOPER;Initial Catalog=Northwind;Integrated Security=True;");
+            optionsBuilder.UseSqlServer(@"Data Source=DESKTOP-QI6H2EA;Initial Catalog=Northwind;Integrated Security=True;");
         }
 
         public DbSet<Product> Products { get; set; }
