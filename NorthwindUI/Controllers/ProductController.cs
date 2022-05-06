@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Microsoft.AspNetCore.Mvc;
+using NorthwindUI.Models;
 
 namespace NorthwindUI.Controllers
 {
@@ -14,8 +15,13 @@ namespace NorthwindUI.Controllers
 
         public IActionResult Index()
         {
+            var products= _productService.GetAll().Data;
+            ProductListViewModel model = new ProductListViewModel
+            {
+                Products = products
+            };
 
-            return View();
+            return View(model);
         }
     }
 }

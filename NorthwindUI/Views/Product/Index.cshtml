@@ -1,2 +1,23 @@
-﻿
-<h1>Product Index Web Page</h1>
+﻿@model NorthwindUI.Models.ProductListViewModel
+
+
+
+<table>
+    <thead>
+    <tr>
+        <th>Product Name</th>
+        <th>Unit Price</th>
+        <th>Units In Stock</th>
+    </tr>
+    </thead>
+    <tbody>
+        @foreach(var product in Model.Products)
+        {
+            <tr>
+                <td>@product.ProductName</td>
+                <td>@product.UnitPrice</td>
+                <td>@product.UnitPrice</td>
+            </tr>
+        }
+    </tbody>
+</table>
