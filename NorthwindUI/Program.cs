@@ -9,10 +9,12 @@ builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory(options
 ));
 
 builder.Services.AddControllersWithViews();
-
+builder.Services.AddSession();
 var app = builder.Build();
 
 app.UseStaticFiles();
+
+app.UseSession();
 
 app.MapControllerRoute(
     name:"default",
