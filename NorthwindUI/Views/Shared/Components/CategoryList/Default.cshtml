@@ -5,6 +5,11 @@
 <div class="list-group">
     @foreach (var category in Model.Categories)
     {
-        <a asp-controller="Product" asp-action="Index" asp-route-categoryId="@category.CategoryId" class="list-group-item">@category.CategoryName</a>
+        var css = "list-group-item";
+        if(category.CategoryId==Model.CurrentCategory)
+        {
+            css += " active";
+        }
+        <a asp-controller="Product" asp-action="Index" asp-route-categoryId="@category.CategoryId" class="@css">@category.CategoryName</a>
     }
 </div>

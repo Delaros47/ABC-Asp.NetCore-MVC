@@ -16,7 +16,8 @@ namespace NorthwindUI.ViewComponants
         {
             var model = new CategoryListViewModel
             {
-                Categories = _categoryService.GetAll().Data
+                Categories = _categoryService.GetAll().Data,
+                CurrentCategory = Convert.ToInt32(HttpContext.Request.Query["categoryId"])
             };
             return View(model);
         }
