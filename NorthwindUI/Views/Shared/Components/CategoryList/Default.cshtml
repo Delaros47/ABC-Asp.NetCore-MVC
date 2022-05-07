@@ -1,9 +1,10 @@
-﻿@model NorthwindUI.Models.CategoryListViewModel
+﻿@addTagHelper "*,Microsoft.AspNetCore.Mvc.TagHelpers"
+@model NorthwindUI.Models.CategoryListViewModel
 
 
 <div class="list-group">
     @foreach (var category in Model.Categories)
     {
-        <a href="#" class="list-group-item">@category.CategoryName</a>
+        <a asp-controller="Product" asp-action="Index" asp-route-categoryId="@category.CategoryId" class="list-group-item">@category.CategoryName</a>
     }
 </div>

@@ -47,5 +47,10 @@ namespace Business.Concrete
             _productDal.Delete(product);
             return new SuccessResult();
         }
+
+        public IDataResult<List<Product>> GetProductsByCategoryId(int categoryId)
+        {
+            return new SuccessDataResult<List<Product>>(_productDal.GetAll(p=>p.CategoryId==categoryId));
+        }
     }
 }

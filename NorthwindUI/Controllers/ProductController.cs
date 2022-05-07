@@ -13,12 +13,13 @@ namespace NorthwindUI.Controllers
             _productService = productService;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(int categoryId,int page=1)
         {
-            var products= _productService.GetAll().Data;
+            int pageSize = 10;
+            var products = _productService.GetProductsByCategoryId(categoryId).Data;
             ProductListViewModel model = new ProductListViewModel
             {
-                Products = products
+                Products = products.Skip((page-1)*pageSize).Take(pageSize).ToList()
             };
 
             return View(model);
