@@ -17,7 +17,7 @@
                 <td>@product.ProductName</td>
                 <td>@product.UnitPrice</td>
                 <td>@product.UnitPrice</td>
-                <td><a asp-controller="Product" asp-action="AddToCart" asp-route-productId="@product.ProductId" class="btn btn-primary">Add To Cart</a></td>
+                <td><a asp-controller="Cart" asp-action="AddToCart" asp-route-productId="@product.ProductId" class="btn btn-primary">Add To Cart</a></td>
             </tr>
         }
     </tbody>

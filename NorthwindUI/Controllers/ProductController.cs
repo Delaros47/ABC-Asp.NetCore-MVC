@@ -25,10 +25,6 @@ namespace NorthwindUI.Controllers
             return View(model);
         }
 
-        [HttpPost]
-        public IActionResult AddToCart()
-        {
 
-        }
     }
 }

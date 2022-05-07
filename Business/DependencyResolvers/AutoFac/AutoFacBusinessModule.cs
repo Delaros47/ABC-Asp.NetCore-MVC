@@ -21,7 +21,7 @@ namespace Business.DependencyResolvers.AutoFac
             builder.RegisterType<CategoryManager>().As<ICategoryService>().SingleInstance();
             builder.RegisterType<EfCategoryDal>().As<ICategoryDal>().SingleInstance();
 
-
+            builder.RegisterType<CartManager>().As<ICartService>();
 
         }
     }
